@@ -1,0 +1,13 @@
+<form [formGroup]='review' (ngSubmit)='onSubmit()' class="ui large form segment error">
+  <h3 class="ui header">Add review</h3>
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" formControlName="ano" ngbButton>Anoniem 
+  </label>
+  <div class="field">
+    <label for="review_text">Review:</label>
+    <textarea class="form-control" formControlName="beschrijving"></textarea>
+  </div>
+  <button type='submit' class="ui positive right floated button">add</button>
+  
+</form>
+<!-- REMOVE {{ recipe.value | json }} {{ recipe.valid }} -->

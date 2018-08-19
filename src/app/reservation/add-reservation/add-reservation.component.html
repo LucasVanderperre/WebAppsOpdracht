@@ -1,0 +1,16 @@
+<form [formGroup]='reservation' (ngSubmit)='onSubmit()' class="ui large form segment error">
+  <h3 class="ui header">Add reservation</h3>
+  <input type="date"
+       ng-model="string" formControlName="time">
+  <div class="field">
+    <label for="review_text">Reservation:</label>
+    <textarea class="form-control" formControlName="message"></textarea>
+  </div>
+  <div class="field row">
+      <label for="review_amount">Amount:</label>
+      <input class='col-md-3' type="number" ng-model="string" formControlName="amount">
+  </div>
+  <button type='submit' ng-confirm-click="Are you sure you want to add the reservation?" class="ui positive right floated button">add</button>
+
+</form>
+<!-- REMOVE {{ recipe.value | json }} {{ recipe.valid }} -->

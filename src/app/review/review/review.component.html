@@ -1,0 +1,36 @@
+<!--<div class="col-md-12">
+  <ul class='ui list'>
+    <li>{{review.time | date:'medium'}}</li>
+    <li>likes: {{review.likes}}</li>
+    <li>Review: {{review.review}}</li>
+  </ul>
+  <!-
+  <button class="ui icon button" (click)="removereview()">
+    <i class="trash outline icon"></i>
+  </button>->
+</div>
+{{review.time | date:'medium'}} |  {{review.username}}
+-->
+<br>
+<div class="card">
+  <div class="card-header">
+   <ul style="padding-left: 0%">
+     <li style="display:inline;">{{review.time | date:'medium'}}</li>
+     <li style="display:inline;margin-left:2%" id="username">{{review.username}}</li>
+     <li style="display:inline;float:right;margin-left:3%">
+        <button class="ui icon button" (click)="dislike()">
+            <i class="far fa-thumbs-down fa-2x"></i></button> : {{review.dislikes}}
+      </li>
+
+     <li style="display:inline;float:right">
+        <button class="ui icon button" (click)="like()">
+            <i class="far fa-thumbs-up fa-2x"></i></button> : {{review.likes}}
+      </li>
+   </ul>
+    
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{review.review}}</p>
+    
+  </div>
+</div>

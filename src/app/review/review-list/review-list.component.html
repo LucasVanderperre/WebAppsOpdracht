@@ -1,0 +1,18 @@
+<div>
+  <app-add-review></app-add-review>
+</div>
+<br>
+<p>Order:</p>
+<button class="ui icon button" (click)="mostNegativeReviews()">
+  <i class="far fa-thumbs-down fa-2x"></i>
+</button>
+<button class="ui icon button" (click)="mostPositiveReviews()">
+  <i class="far fa-thumbs-up fa-2x"></i>
+</button>
+<button class="ui icon button" (click)="mostRecentReviews()">
+  <i class="far fa-clock fa-2x"></i>
+</button>
+<div class="ui" id='review-list'>
+  <app-review *ngFor="let localReview of reviews" [review]="localReview" (deleteReview)='removeReview($event)'>
+  </app-review>
+</div>

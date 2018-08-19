@@ -1,0 +1,8 @@
+<div>
+  <app-add-reservation></app-add-reservation>
+</div>
+<br>
+<div class="ui" id='reservation-list'>
+  <app-reservation *ngFor="let localReservation of reservations" [reservation]="localReservation" (deleteReservation)='removeReservation($event)'>
+  </app-reservation>
+</div>

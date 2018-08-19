@@ -1,0 +1,64 @@
+<!--
+<div class="ui container" id='topid'>
+  <div class="ui three item menu">
+    <a class='item' routerLinkActive='active' routerLink="review/list">reviews</a>
+
+    <a *ngIf='(currentUser | async)' class='item' routerLinkActive='active' routerLink="reservation/list">reservations</a>
+    <a *ngIf='(currentUser | async) else loginlink' class="item" routerLinkActive='active' routerLink="/logout">{{currentUser|async}}</a>
+    <ng-template #loginlink>
+      <a class="item" routerLinkActive='active' routerLink="/login">log in</a>
+    </ng-template>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Reservationsys</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a *ngIf='(currentUser | async)' class='item' routerLinkActive='active' routerLink="reservation/list">reservations</a></li>
+      <li><a class='item' routerLinkActive='active' routerLink="review/list">reviews</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li> <a *ngIf='(currentUser | async) else loginlink' class="item"></a>
+        <ng-template #loginlink>
+          <a class="item" routerLinkActive='active' routerLink="/register">Register</a>
+        </ng-template></li>
+      <a *ngIf='(currentUser | async) else loginlink' class="item" routerLinkActive='active' routerLink="/logout">{{currentUser|async}}</a>
+      <ng-template #loginlink>
+        <a class="item" routerLinkActive='active' routerLink="/login">Log in</a>
+      </ng-template>
+    </ul>
+  </div>
+</nav>
+<div>  <router-outlet></router-outlet>
+</div>
+-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLinkActive='active' routerLink="home">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"  routerLinkActive='active' routerLink="review/list">reviews</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link"  routerLinkActive='active' routerLink="reservation/list">reservations</a>
+      </li>
+    </ul>
+    <a *ngIf='(currentUser | async) else loginlink' class="item" routerLinkActive='active' routerLink="/logout">{{currentUser|async}} (Log out)</a>
+    <ng-template #loginlink>
+      <a class="item" routerLinkActive='active' routerLink="/login">log in</a>
+    </ng-template>
+  </div>
+</nav>
+<div>
+  <router-outlet></router-outlet>
+
+</div>
